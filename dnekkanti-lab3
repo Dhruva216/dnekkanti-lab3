@@ -1,0 +1,81 @@
+// Dhruva Krishna Nekkanti
+// ITMD 541-01 Graduate Student
+
+// Exercise 1: minMaxAverage function
+function minMaxAverage(arr) {
+    const min = Math.min(...arr);
+    const max = Math.max(...arr);
+    const avg = (arr.reduce((sum, num) => sum + num, 0) / arr.length).toFixed(2);
+    console.log(`Total Numbers: ${arr.length}, Min Value: ${min}, Max Value: ${max}, Average: ${avg}`);
+}
+
+// Test cases for Exercise 1
+minMaxAverage([2, 5, 23, 6, 9, 4, 30, 1]);
+minMaxAverage([1, 5, 3, 5, 10, 12, 8, 6]);
+minMaxAverage([15, 42, 7, 24, 19, 8]);
+
+// Exercise 2: countVowels function
+function countVowels(str) {
+    const vowels = "aeiouAEIOU";
+    const count = str.split('').filter(char => vowels.includes(char)).length;
+    console.log(`${str}: ${count} vowels`);
+}
+
+// Test cases for Exercise 2
+countVowels("Winter");
+countVowels("Programming");
+countVowels("Beautiful");
+
+// Exercise 3: sortNumbers function
+function sortNumbers(arr) {
+    const sortedArray = [...arr].sort((a, b) => a - b);
+    console.log(`Original Array: [${arr}] Sorted Array: [${sortedArray}]`);
+    return sortedArray;
+}
+
+// Test cases for Exercise 3
+sortNumbers([9, 4, 6, 2]);
+sortNumbers([12, 45, 1, 78, 3]);
+sortNumbers([22, 5, 17, 8, 10]);
+
+// Exercise 4: celsiusToFahrenheit function
+function celsiusToFahrenheit(celsius) {
+    let celsiusValue = parseFloat(celsius);
+    let fahrenheit = ((celsiusValue * 9/5) + 32).toFixed(1);
+    console.log(`${celsiusValue.toFixed(1)} Celsius = ${fahrenheit} Fahrenheit`);
+}
+
+// Test cases for Exercise 4
+celsiusToFahrenheit(30);
+celsiusToFahrenheit(-10);
+celsiusToFahrenheit(100);
+celsiusToFahrenheit("35"); // Graduate requirement test case
+celsiusToFahrenheit("-5"); // Graduate requirement test case
+
+// Exercise 5: sortPeopleByAge function
+function sortPeopleByAge(people) {
+    const sortedPeople = people.sort((a, b) => a.age - b.age);
+    const introductions = sortedPeople.map(person => `${person.name} is ${person.age} and from ${person.city}`);
+    console.log(introductions);
+    return introductions;
+}
+
+// Test cases for Exercise 5
+const people1 = [
+    { name: 'Alice', age: 25, city: 'Chicago' },
+    { name: 'Bob', age: 22, city: 'New York' },
+    { name: 'Charlie', age: 30, city: 'Los Angeles' },
+    { name: 'David', age: 28, city: 'Houston' },
+    { name: 'Eve', age: 21, city: 'San Francisco' }
+];
+
+const people2 = [
+    { name: 'Frank', age: 35, city: 'Boston' },
+    { name: 'Grace', age: 40, city: 'Denver' },
+    { name: 'Hank', age: 29, city: 'Seattle' },
+    { name: 'Ivy', age: 33, city: 'Austin' },
+    { name: 'Jack', age: 27, city: 'Miami' }
+];
+
+sortPeopleByAge(people1);
+sortPeopleByAge(people2);
